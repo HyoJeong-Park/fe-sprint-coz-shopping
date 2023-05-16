@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import mainLogo from '../img/mainLogo.png'
+import mainLogo from '../assets/mainLogo.png'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import {faGift, faStar} from "@fortawesome/free-regular-svg-icons";
