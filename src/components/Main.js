@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ProductList from './ProductList';
+import BookmarkList from './BookmarkList';
 
-function Main () {
+function Main ({isBookmark, setIsBookmark}) {
     
     const [products, setProducts] = useState([])
 
@@ -13,7 +14,8 @@ function Main () {
     
     return (
         <main>
-            <ProductList products={products}/>
+            <ProductList products={products} isBookmark={isBookmark} setIsBookmark={setIsBookmark} />
+            <BookmarkList products={products} isBookmark={isBookmark} setIsBookmark={setIsBookmark} />
         </main>
     )
 }

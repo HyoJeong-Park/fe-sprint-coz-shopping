@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import mainLogo from '../assets/mainLogo.png'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 import {faGift, faStar} from "@fortawesome/free-regular-svg-icons";
+
 
 
 function Header () {
@@ -16,10 +18,12 @@ function Header () {
     return (
         <header>
             <div className='headerWrap'>
-                <div className='mallSignature'>
-                    <img src={mainLogo} className='mallLogo'></img>
-                    <h1 className='mallName'>COZ Shopping</h1>
-                </div>
+                <Link to='/'>
+                    <div className='mallSignature'>
+                        <img src={mainLogo} className='mallLogo'></img>
+                        <h1 className='mallName'>COZ Shopping</h1>
+                    </div>
+                </Link>
                 <div className='menuBar'  onClick={hideOnOff}>
                     <FontAwesomeIcon icon={faBars} size="2x"/>
                 </div>
@@ -27,10 +31,14 @@ function Header () {
                     <p>OOO님, 안녕하세요</p>
                     <hr />
                     {/* <FontAwesomeIcon icon={faGift} /> */}
-                    <p>상품리스트 페이지</p>
+                    <Link to='/product/list'>
+                        <p className='menuhover'>상품리스트 페이지</p>
+                    </Link>
                     <hr />
                     {/* <FontAwesomeIcon icon={faStar} /> */}
-                    <p>북마크 페이지</p>
+                    <Link to='/bookmark'>
+                        <p className='menuhover'>북마크 페이지</p>
+                    </Link>
                 </div>
             </div>
         </header>
