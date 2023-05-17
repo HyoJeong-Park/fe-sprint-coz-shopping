@@ -1,15 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import imgReady from '../assets/다운로드.png'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faStar} from "@fortawesome/free-solid-svg-icons"
-import Product from './Product'
 
-function ProductList ({products, isBookmark,  setIsBookmark}) {
-
-    // 이 상태를 전역으로 빼는 걸 고민해봐야함
-    // 이렇게 해놓으면 메인페이지에서 뜨는 거 밖에
-    // 컨트롤 못 함
-    // 상품의 id랑 상태의 index를 같은 번호로 취급하자.
+function BookmarkList ({products, isBookmark,  setIsBookmark}) {
 
     const changeBookmarkState = (index) => {
         setIsBookmark(isBookmark => {
@@ -19,16 +13,9 @@ function ProductList ({products, isBookmark,  setIsBookmark}) {
           });
     };
 
-    useEffect(() => {
-        console.log(isBookmark);
-    }, [isBookmark]);
-    
-
-
-
-    return (
+    return(
         <section>
-            <h1 className='listName'>상품 리스트</h1>
+            <h1 className='listName'>북마크 리스트</h1>
             <ul className='list'>
             {products.map((el) => 
                 <li key={el.id} className='productCnt'>
@@ -42,16 +29,9 @@ function ProductList ({products, isBookmark,  setIsBookmark}) {
                     </div>
                 </li>
             )}
-            {/* {products.map((el, index) => 
-                <div className= 'productModal hide'>
-                    <div className='productModalCnt'>
-                        안녕하세용? 모달입니당?
-                    </div>
-                </div>
-            )}             */}
             </ul>
         </section>
     )
 }
 
-export default ProductList;
+export default BookmarkList;
