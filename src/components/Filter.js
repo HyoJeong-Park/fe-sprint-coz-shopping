@@ -7,6 +7,18 @@ import brand from '../assets/브랜드.png'
 
 function Filter () {
 
+    // switch(item.type){
+    //     case 'product':
+    //         return();
+    //     case 'Category':
+    //         return();
+    //     case 'Exibition':
+    //         return();
+    //     case 'Brand':
+    //         return();
+
+    // }
+
     return (
         <ul className='filter'>
             <li className='filterList'>

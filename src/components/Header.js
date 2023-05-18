@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import { Link } from 'react-router-dom';
 import mainLogo from '../assets/mainLogo.png'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -12,7 +12,6 @@ function Header () {
     const [hide, setHide] = useState(true);
     const hideOnOff = () => {
         setHide(!hide);
-        console.log(hide)
     };
 
     return (
@@ -32,12 +31,12 @@ function Header () {
                     <hr />
                     {/* <FontAwesomeIcon icon={faGift} /> */}
                     <Link to='/product/list'>
-                        <p className='menuhover'>상품리스트 페이지</p>
+                        <p className={`menuhover ${!hide ? '' : 'hide'}`} onClick={hideOnOff}>상품리스트 페이지</p>
                     </Link>
                     <hr />
                     {/* <FontAwesomeIcon icon={faStar} /> */}
                     <Link to='/bookmark'>
-                        <p className='menuhover'>북마크 페이지</p>
+                        <p className={`menuhover ${!hide ? '' : 'hide'}`} onClick={hideOnOff}>북마크 페이지</p>
                     </Link>
                 </div>
             </div>
